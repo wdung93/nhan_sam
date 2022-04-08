@@ -1,0 +1,88 @@
+<div class="header grid">
+	<div class="header_logo">
+		<h1><a href="/" tittle="Nhân sân nhung  hươu" rel="home">
+				<img src="https://nhansamnhunghuou.com/wp-content/uploads/2021/01/13.jpg" alt="Nhân sân nhung  hươu">
+			</a>
+		</h1>			
+    </div>
+    <nav class="header_navbar">
+        <button class="navbar-toggler" type="button">
+                <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="navbar_overlay">
+             <div class="header_sm-navbar">
+                 <button class="navbar__mobile-close">
+                     <i class="fas fa-times"></i>
+                 </button>
+                 <ul class="header_navbar-sm-list">
+                    <li class="header_navbar-sm-item"><a href="/" class="navbar__item-sm-link"><i class="fas fa-home"></i>  Trang chủ</a></li>
+                    <li class="header_navbar-sm-item"><a href="/introduce" class="navbar__item-sm-link"><i class="fas fa-book"></i>  Giới thiệu</a></li>
+                    <li class="header_navbar-sm-item"><a href="" class="navbar__item-sm-link"><i class="fas fa-question"></i>  Hỏi đáp</a></li>
+                    <li class="header_navbar-sm-item"><a href="" class="navbar__item-sm-link"><i class="far fa-address-book"></i>  Liên hệ</a></li>
+                    <li class="header_navbar-sm-item">
+                        <img src="/img/images.png" alt="Account" class="navbar__account-sm-img">
+                        <a href="" class="navbar__item-sm-link">Admin</a>
+                        <div class="dropdown-sm-menu">
+                            <a class="dropdown-sm-item" href="/ginseng/create">Đăng sản phẩm</a>
+                            <a class="dropdown-sm-item" href="/me/stored-products">Sản phẩm của tôi</a>
+                            <a class="dropdown-sm-item" href="/">Đăng xuất</a>
+                        </div>
+                    </li>
+                 </ul>
+             </div>
+        </div>
+
+        <ul class="header_navbar-list hide-on-mobile-tablet">
+            <li class="header_navbar-item header_navbar-item-separate"><a href="/" class="navbar__item-link">Trang chủ</a></li>
+            <li class="header_navbar-item header_navbar-item-separate"><a href="/introduce" class="navbar__item-link">Giới thiệu</a></li>
+            <li class="header_navbar-item header_navbar-item-separate"><a href="/" class="navbar__item-link">Hỏi đáp</a></li>
+            <li class="header_navbar-item"><a href="/" class="navbar__item-link">Liên hệ</a></li>
+        </ul>
+
+        <ul class="header_navbar-list">
+            <form class="header_search" method="GET" action="/">
+                <input type="text" class="header_search-input" name="q" required>
+                <button type="submit" class="search_submit">Tìm kiếm</button>
+            </form>
+            <li class="header_navbar-item hide-on-mobile-tablet">
+                <img src="/img/images.png" alt="Account" class="navbar__account-img">
+                <a href="" class="navbar__item-link">Admin</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/ginseng/create">Đăng sản phẩm</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/me/stored-products">Sản phẩm của tôi</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/">Đăng xuất</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarOverlay = document.querySelector('.navbar_overlay');
+    const navbarMobileClose = document.querySelector('.navbar__mobile-close');
+    const headerSmNavbar = document.querySelector('.header_sm-navbar');
+
+    function showHeaderNavbarSmList() {
+        navbarOverlay.classList.add('active');
+    }
+
+    function hiddenHeaderNavbarSmList() {
+        navbarOverlay.classList.remove('active');
+    }
+
+    
+    navbarToggler.addEventListener('click', showHeaderNavbarSmList);
+    
+
+    navbarMobileClose.addEventListener('click', hiddenHeaderNavbarSmList);
+
+    navbarOverlay.addEventListener('click', hiddenHeaderNavbarSmList);
+
+    headerSmNavbar.addEventListener('click', function(e) {
+        e.stopPropagation()
+    })
+</script>
